@@ -1,0 +1,9 @@
+table td.form_row{
+
+}
+
+table.form_table td{
+    text-align:left;
+    padding: 4px;
+    margin: 5px;
+}
