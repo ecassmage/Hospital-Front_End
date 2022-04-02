@@ -1,0 +1,2 @@
+hospital1.patients = 1, 2, 3, 4, 6
+hospital2.patients = 6, 8

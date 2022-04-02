@@ -7,3 +7,11 @@ table.form_table td{
     padding: 4px;
     margin: 5px;
 }
+
+.form_label {
+    font-size: 25px;
+}
+
+.form_entry{
+    font-size: 20px;
+}

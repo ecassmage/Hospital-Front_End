@@ -12,6 +12,7 @@ ul.menu_band {
     padding: 0;
     overflow: hidden;
     background-color: var(--header_band_color);
+    border: 2px double darkgray;
 }
 
 li.menu_band {
