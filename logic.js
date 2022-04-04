@@ -1,29 +1,52 @@
 let Hospitals = {
     "hospital1": {
         'patients': Array(10).fill(true),
-        'doctor': Array(3).fill(true),
-        'nurse': Array(5).fill(true)
+        'doctors': Array(3).fill(true),
+        'nurses': Array(5).fill(true)
     },
     "hospital2": {
         'patients': Array(10).fill(true),
-        'doctor': Array(3).fill(true),
-        'nurse': Array(5).fill(true)
+        'doctors': Array(3).fill(true),
+        'nurses': Array(5).fill(true)
     },
     "hospital3": {
         'patients': Array(10).fill(true),
-        'doctor': Array(3).fill(true),
-        'nurse': Array(5).fill(true)
+        'doctors': Array(3).fill(true),
+        'nurses': Array(5).fill(true)
     }
+}
+let homepage_images = ["images/homepage/Harold.jpg", "images/homepage/stethoscope.jpg", "images/homepage/hospital_h.jpg"]
+let current_homepage_images = 0;
+
+
+function change_image(direction){
+
+    (direction === 'left') ? current_homepage_images--:current_homepage_images++;
+    if (current_homepage_images < 0) current_homepage_images = homepage_images.length-1;
+    else if (current_homepage_images === homepage_images.length) current_homepage_images = 0;
+
+    document.getElementById('homepage_image_show').src = homepage_images[current_homepage_images];
 }
 
 function update_hospital(hospital_name, type){
+    // let start_string = '';
+    // if (type === 'patients'){
+    //     start_string = 'room_';
+    // }
+    // else if (type === 'nurses'){
+    //     start_string = 'nurse_';
+    // }
+    // else{
+    //     start_string = 'doctor_';
+    // }
+    let start_string = (type === 'patients') ? 'room_' : ((type === 'nurses') ? 'nurse_' : 'doctor_');
+    console.log(start_string)
     hospital_name = (parseInt(hospital_name) + 1).toString();
     let adding = 0;
     for (const boolean of Hospitals['hospital' + hospital_name][type]){
-        document.getElementById('room_' + just(adding.toString(), '0', 3)).disabled = !boolean;
+        document.getElementById(start_string + just(adding.toString(), '0', 3)).disabled = !boolean;
         adding++;
     }
-
 }
 
 function modify_values(line){
@@ -85,9 +108,7 @@ function save() {
     let text = get_information();
 
     let pom = document.createElement('a');
-    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' +
-
-        encodeURIComponent(text));
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     pom.setAttribute('download', 'storage1.txt');
 
     pom.style.display = 'none';
@@ -98,8 +119,31 @@ function save() {
     document.body.removeChild(pom);
 }
 
+function nurse_id(hospital, nurse_index){
+
+    let entity_type = '1';
+    hospital = just(hospital.toString(), '0', 2);
+    nurse_index = just(nurse_index.toString(), '0', 3);
+
+    const html_nurse_id = document.querySelector('#nurse_id');
+    html_nurse_id.textContent = `${entity_type}${hospital}-${nurse_index}`;
+    Hospitals['hospital' + (parseInt(hospital) + 1).toString()]['nurses'][parseInt(nurse_index)] = false;
+    update_hospital(hospital, 'nurses')
+}
+
+function doctor_id(hospital, doctor_index){
+
+    let entity_type = '2';
+    hospital = just(hospital.toString(), '0', 2);
+    doctor_index = just(doctor_index.toString(), '0', 3);
+
+    const html_doctor_id = document.querySelector('#doctor_id');
+    html_doctor_id.textContent = `${entity_type}${hospital}-${doctor_index}`;
+    Hospitals['hospital' + (parseInt(hospital) + 1).toString()]['doctors'][parseInt(doctor_index)] = false;
+    update_hospital(hospital, 'doctors')
+}
+
 function patient_id(hospital, room, gender, disease, length_of_stay, citizen){
-    // A bit easier to read them the previous function which just made everything basically on a single line.
 
     let entity_type = '0';
     hospital = just(hospital.toString(), '0', 2);

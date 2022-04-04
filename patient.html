@@ -11,15 +11,14 @@
 <!--    <?php $db = mysqli_connect('localhost','root','evanm','hospital');?>-->
 </head>
 <body>
+    <header>
     <ul class="menu_band">
         <li class="menu_band"><a class="menu_band current_page">Patient</a></li>
         <li class="menu_band"><a class="menu_band" href="nurse.html">Nurse</a></li>
         <li class="menu_band"><a class="menu_band" href="doctor.html">Doctor</a></li>
         <li class="menu_band"><a class="menu_band" href="index.html">Home</a></li>
     </ul>
-    <?php
-    echo "This message is from server side."
-    ?>
+    </header>
     <table style="text-align:center">
         <tr>
             <td>
@@ -54,7 +53,6 @@
                                 <input type="radio" id="room_007" name="room" value="7"><label for="room_007">Room 7</label>
                                 <input type="radio" id="room_008" name="room" value="8"><label for="room_008">Room 8</label>
                                 <input type="radio" id="room_009" name="room" value="9"><label for="room_009">Room 9</label>
-
                             </td>
                         </tr>
                         <tr>
