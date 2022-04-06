@@ -2,6 +2,12 @@ table td.form_row{
 
 }
 
+.form_table{
+    border: 5px black solid;
+    padding: 2%;
+    border-radius: 25px;
+}
+
 table.form_table td{
     text-align:left;
     padding: 4px;
@@ -14,4 +20,15 @@ table.form_table td{
 
 .form_entry{
     font-size: 20px;
+}
+
+.parent_table{
+    position: relative;
+    margin-top: 3.5%;
+    padding: 5% 5% 2% 5%;
+    border: 15px black solid;
+    border-radius: 25px;
+}
+table.parent_table input{
+    margin: 1%;
 }
