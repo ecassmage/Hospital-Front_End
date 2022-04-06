@@ -48,3 +48,9 @@ li a.current_page{
 li a.current_page:hover{
     background-color: var(--header_band_hover_current_page);
 }
+
+
+.save_band:hover{
+    cursor: pointer;
+    color: darkgrey;
+}

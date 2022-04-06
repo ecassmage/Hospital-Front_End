@@ -4,8 +4,14 @@ table td.form_row{
 
 .form_table{
     border: 5px black solid;
-    padding: 2%;
+    padding: 3.5%;
     border-radius: 25px;
+    /* white-space: nowrap; */
+    width: 100%;
+}
+
+.form_size{
+    /* width: fit-content; */
 }
 
 table.form_table td{
@@ -20,6 +26,8 @@ table.form_table td{
 
 .form_entry{
     font-size: 20px;
+    text-align:center !important;
+
 }
 
 .parent_table{
@@ -28,7 +36,45 @@ table.form_table td{
     padding: 5% 5% 2% 5%;
     border: 15px black solid;
     border-radius: 25px;
+    width: 75%;
 }
 table.parent_table input{
     margin: 1%;
+}
+
+input[type="button"] {
+    font-size: 15px;
+    border-radius: 25px;
+    background-color: white;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+
+  }
+
+input[type="button"]:hover {
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(175, 170, 170);
+}
+
+#Save{
+    font-size: 15px;
+    border-radius: 25px;
+    background-color: white;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease; 
+}
+
+#Save:hover{
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(175, 170, 170);
 }
