@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/general_overrides.css"/>
     <link rel="stylesheet" type="text/css" href="stylesheets/menu_band.css"/>
 
-    <script type="text/javascript" src="logic.js"></script>
+<!--    <script type="text/javascript" src="slideshow.js"></script>-->
+    <script type="text/javascript" src="scripts/dataset.js"></script>
 </head>
 <body>
     <ul class="menu_band">
@@ -14,6 +15,12 @@
         <li class="menu_band"><a class="menu_band current_page">Nurse</a></li>
         <li class="menu_band"><a class="menu_band" href="doctor.html">Doctor</a></li>
         <li class="menu_band"><a class="menu_band" href="index.html">Home</a></li>
+        <li class="menu_band">
+            <div>
+                <label class="save_band" for="loaded_file">LOAD</label>
+                <input type="file" id="loaded_file" class="save_band" style="visibility:hidden" accept=".txt" onclick="load('nurses')">
+            </div>
+        </li>
     </ul>
     <table style="text-align:center">
         <tr>

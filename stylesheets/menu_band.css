@@ -16,10 +16,20 @@ ul.menu_band {
 }
 
 li.menu_band {
-    float: right;
 }
 
 li a.menu_band {
+    float: right;
+    display: block;
+    color: var(--header_band_word_color);
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+}
+
+
+li .save_band {
+    float: left;
     display: block;
     color: var(--header_band_word_color);
     text-align: center;
