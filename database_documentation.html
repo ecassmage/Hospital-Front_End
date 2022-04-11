@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/general_overrides.css"/>
     <link rel="stylesheet" type="text/css" href="stylesheets/menu_band.css"/>
     <link rel="stylesheet" type="text/css" href="stylesheets/documentation_styles.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/sub_menu.css">
 </head>
 <body>
     <ul class="menu_band">
@@ -16,20 +17,27 @@
         <li class="menu_band"><a class="menu_band" href="doctor.html">Doctor</a></li>
         <li class="menu_band"><a class="menu_band" href="index.html">Home</a></li>
     </ul>
-
-
     <div class="header_band">
         <hr>
+        <div style="text-align: center">
+            <ul class="sub_menu_band">
+                <li class="sub_menu_band"><a class="current_sub_menu">DATABASE</a></li>
+                <li class="sub_menu_band"><a class="sub_menu_band" href="sql_insert_documentation.html">SQL INSERT GENERATOR</a></li>
+                <li class="sub_menu_band"><a class="sub_menu_band" href="er_diagram_documentation.html">ER DIAGRAM</a></li>
+                <li class="sub_menu_band"><a class="sub_menu_band" href="schema_documentation.html">SCHEMA</a></li>
+                <li class="sub_menu_band"><a class="sub_menu_band" href="website_documentation.html">SITE</a></li>
+            </ul>
+        </div>
         <h1 class="information">Hospital Database Management System</h1>
 
-        <p><h2 class="information">Authors;</h2></p>
+        <h2 class="information">Authors;</h2>
         <h3 class="information">&emsp;Evan Morrison<br>
             &emsp;Dante Masciotra<br>
             &emsp;Zach Wasylyk</h3>
         <hr>
     </div>
-    <div class="information">
-    <p style="color: black; font-size: 18px">&emsp;&emsp; This project was completed by utilizing an ER diagram, schema, and ultimately implemented as a database.
+    <div class="information" style="font-size: 18px">
+    <p>&emsp;&emsp; This project was completed by utilizing an ER diagram, schema, and ultimately implemented as a database.
         We created a python program to automate the creation of the insert statements for the database&#39;s tables.
         The ER diagram displays the relationships interpreted and thought necessary from the project question guidelines.
         The schema is an extension of this where the tables of the schema are modeled after the relationships within the ER diagram.
@@ -210,11 +218,11 @@ WHERE</span> <span class="key">disease</span> <span class="keyword">LIKE</span> 
                 <th class="invisible_td"></th>
 
                 <td><pre><code class="lang-sql"><span class="hljs-built_in"><span class="keyword">
-SELECT</span> <span class="key">DISEASE</span>.<span class="key">NAME</span>, COUNT(<span class="key">disease</span>)<br><span class="keyword">
+SELECT</span> <span class="entity">DISEASE</span>.<span class="key">NAME</span>, COUNT(<span class="key">disease</span>)<br><span class="keyword">
 FROM</span> <span class="entity">Patient</span><br><span class="keyword">
-INNER</span> <span class="keyword">JOIN</span> <span class="key">DISEASE</span> <span class="keyword">ON</span><br><span class="entity">
-Patient</span>.<span class="key">disease</span> = <span class="key">DISEASE</span>.<span class="key">id</span><br><span class="keyword">
-GROUP</span> <span class="keyword">BY</span> <span class="key">DISEASE</span>.<span class="key">NAME</span><br><span class="keyword">
+INNER</span> <span class="keyword">JOIN</span> <span class="entity">DISEASE</span> <span class="keyword">ON</span><br><span class="entity">
+Patient</span>.<span class="key">disease</span> = <span class="entity">DISEASE</span>.<span class="key">id</span><br><span class="keyword">
+GROUP</span> <span class="keyword">BY</span> <span class="entity">DISEASE</span>.<span class="key">NAME</span><br><span class="keyword">
 HAVING</span> COUNT (<span class="key">disease</span>)=(<br><span class="keyword">
 SELECT</span> MAX(mycount)<br><span class="keyword">
 FROM</span> (<br><span class="keyword">
