@@ -1,3 +1,1 @@
-hospital1.patients = 0, 3, 4, 6
-hospital1.doctors = 0, 1, 2
-hospital2.doctors = 1
+hospital2.nurses = 1

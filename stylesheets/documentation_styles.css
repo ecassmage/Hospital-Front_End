@@ -14,19 +14,21 @@
 
 }
 
+.keyword, .entity, .key{
+    display: inline-block;
+    font-weight: bold;
+}
+
 .keyword{
     color: darkorange;
-    font-weight: bold;
 }
 
 .entity{
     color: darkgray;
-    font-weight: bold;
 }
 
 .key{
     color: purple;
-    font-weight: bold;
 }
 
 .query_table table{
